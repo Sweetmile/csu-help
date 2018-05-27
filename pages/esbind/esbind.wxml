@@ -1,0 +1,30 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+    </view>
+    <view class="page__bd">
+          <view class='input'><view class='placeholder'>
+            <view class="weui-cells__title">学号</view>
+            <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="xhInput" placeholder="请输入学号"/>
+                </view>
+            </view>
+            </view>
+          </view></view>
+          <view class='input'><view class='placeholder'>
+            <view class="weui-cells__title">密码</view>
+            <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" password bindinput="pwdInput" placeholder="请输入教务系统密码"/>
+                </view>
+            </view>
+            </view>
+          </view></view>
+          <view wx:if="{{binded}}" class="weui-cells__title">已绑定{{bind_xh}}-{{bind_name}}</view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" open-type="getUserInfo" type="primary" bindgetuserinfo="wxLogin">微信绑定</button>
+        </view>
+    </view>
+</view>

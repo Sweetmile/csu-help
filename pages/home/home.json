@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "course": "/components/course/course",
+    "error": "/components/error/error"
+  }
+}

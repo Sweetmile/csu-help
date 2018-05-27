@@ -1,0 +1,12 @@
+/* component/course/course.wxss */
+@import '../../style/weui.wxss';
+
+.name {
+  width: 55%;
+}
+.professor {
+  width: 40%;
+}
+.weui-form-preview__item{
+  text-align: left;
+}

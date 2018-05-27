@@ -1,0 +1,9 @@
+// let web_root = "https://wechat.coderwu.com/chelp"
+let web_root = "http://127.0.0.1:8888/"
+
+module.exports = {
+  miniAuthLogin: web_root + 'mini/auth/login',
+
+  miniEsBind: web_root + 'mini/es/bind',
+  miniEsInfo: web_root + 'mini/es/info'
+}

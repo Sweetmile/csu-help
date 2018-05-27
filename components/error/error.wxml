@@ -1,0 +1,6 @@
+<view class="weui-flex">
+        <view class="weui-flex__item">
+              <image class="image" mode="aspectFit" src="/static/icon/error.png" />
+              <view class="message">{{message}}</view>
+        </view>
+</view>

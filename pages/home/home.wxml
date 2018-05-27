@@ -1,0 +1,41 @@
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+    <view class="head">
+        <block wx:for="{{line}}" wx:for-item="i" wx:key="*this">
+            <view class="weui-flex">
+                <block wx:for="{{line_item}}" wx:for-item="j" wx:key="*this">
+                <navigator url="{{list[(i - 1) * line_size + j - 1].page}}" class="icon" hover-class="weui-grid_active">
+                    <view class="weui-flex__item"><view class="placeholder">
+                    <image class="weui-grid__icon" src="{{list[(i - 1) * line_size + j - 1].icon}}" />
+                    <view class="weui-grid__label">{{list[(i - 1) * line_size + j - 1].name}}</view>
+                    </view></view>
+                </navigator>
+                </block>
+            </view>
+        </block>
+    </view>
+    </view>
+    <view wx:if="{{has_login}}" class="page__bd">
+
+    <view class='course-card'>
+     <view class="weui-flex">
+        <view class="weui-flex__item title">
+          <icon size="23" class='title_icon'>
+              <image class="weui-grid__icon" src="/static/icon/index/course.png" />
+          </icon>
+          今日课表
+        </view>
+     </view>
+     <view class="weui-flex">
+        <view class="weui-flex__item">
+              <image class="weui-grid__icon" src="/static/icon/index/outdoor.png" />
+              <view class="weui-grid__icon" style='font-size:12px;color:#6F6F6F;width:35%'>今日无课，出去走走吧~</view>
+        </view>
+     </view>
+     <course name="1"></course>
+  </view>
+
+  </view>
+
+  <error message="{{err_message}}"></error>
+</view>

@@ -1,12 +1,45 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/home/home",
+    "pages/news/news",
+    "pages/user/user",
+    "pages/esbind/esbind"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTitleText": "C助手",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#13227a",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home_select.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "iconPath": "static/icon/news.png",
+        "selectedIconPath": "static/icon/news_select.png",
+        "text": "咨询"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/icon/user.png",
+        "selectedIconPath": "static/icon/user_select.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 5000
+  },
+  "debug": true
 }

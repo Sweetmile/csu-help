@@ -1,0 +1,38 @@
+.icon {
+  width: 33%;
+}
+.weui-flex {
+  width: 100%;
+  background: #fff;
+}
+.head {
+  box-shadow: 1px 1px 2px #A2A2A2;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.placeholder {
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+.page__bd {
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 1px #A2A2A2;
+}
+.page__bd_spacing {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.weui-panel__hd {
+  padding: 5px 5px 5px;
+}
+.title_icon {
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
+.title {
+  font-size: 15px;
+}
+.course-card {
+  box-shadow: 1px 1px 2px #A2A2A2;
+}

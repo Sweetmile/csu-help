@@ -1,0 +1,10 @@
+.page__hd {
+  text-align: center;
+}
+
+.avatar {
+  height: 148rpx;
+  width: 148rpx;
+  border-radius: 50%;
+}
+
