@@ -108,17 +108,10 @@ function request(url, data = {}, method = "GET") {
 
 function redirect(url) {
 
-    //判断页面是否需要登录
-    if (false) {
-        wx.redirectTo({
-            url: '/pages/auth/login/login'
-        });
-        return false;
-    } else {
-        wx.redirectTo({
-            url: url
-        });
-    }
+  wx.redirectTo({
+    url: url
+  });
+
 }
 
 function showErrorToast(msg) {

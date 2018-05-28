@@ -8,7 +8,7 @@ Page({
     data: {
         has_login: false,
         es_bind: false,
-        err_message: "error",
+        err_message: "未登录",
         line: [1, 2],
         line_item: [1, 2, 3],
         line_size: 3,
@@ -63,6 +63,7 @@ Page({
       util.sleep(1000);
       this.setData({
         has_login: app.globalData.hasLogin,
+        es_bind: wx.getStorageSync("course_shedule")
       });
     },
     onShow: function () {
@@ -76,6 +77,10 @@ Page({
           if (res.code === "200") {
             wx.setStorageSync("course_shedule", res.data);
             wx.setStorageSync("course_shedule_date", new Date().getDate())
+          } else {
+            that.setData({
+              err_message: res.message,
+            })
           }
         })
       }
@@ -85,12 +90,5 @@ Page({
         courses: dayCourse,
         has_course: dayCourse.length > 0
       })
-      if (!app.globalData.hasLogin) {
-        that.setData({
-          err_message: "请前往设置授权登陆哦~",
-          es_bind: wx.getStorageSync("course_shedule")
-        })
-      }
-
     }
 });

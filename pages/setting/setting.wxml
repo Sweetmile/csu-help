@@ -1,0 +1,17 @@
+<view class="weui-cells__title">授权</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">微信登陆</view>
+      <view class="weui-cell__ft">
+          <button class="weui-btn mini-btn" open-type="getUserInfo" disabled='{{disabled}}' type="{{b_type}}" bindgetuserinfo="wxLogin" size="mini">{{button}}</button>
+      </view>
+      
+  </view>
+  <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">教务系统绑定</view>
+      <view class="weui-cell__ft">
+           <switch checked='{{es_bind}}' bindchange="esRemove"/>
+      </view>
+      
+  </view>
+</view>

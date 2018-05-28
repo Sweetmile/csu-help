@@ -6,5 +6,6 @@ module.exports = {
 
   miniEsBind: web_root + 'mini/es/bind',
   miniEsInfo: web_root + 'mini/es/info',
-  miniEsSchedule: web_root + 'mini/es/schedule'
+  miniEsSchedule: web_root + 'mini/es/schedule',
+  miniEsUnbind: web_root + 'mini/es/unbind'
 }
