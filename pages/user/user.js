@@ -17,7 +17,6 @@ Page({
 
   },
   onShow: function () {
-
     //获取用户的登录信息
     if (app.globalData.hasLogin) {
       let userInfo = wx.getStorageSync('userInfo');

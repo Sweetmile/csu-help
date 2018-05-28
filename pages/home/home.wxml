@@ -17,7 +17,7 @@
     </view>
     <view wx:if="{{has_login}}" class="page__bd">
 
-    <view class='course-card'>
+    <view class='course-card' wx:if="{{es_bind}}">
      <view class="weui-flex">
         <view class="weui-flex__item title">
           <icon size="23" class='title_icon'>

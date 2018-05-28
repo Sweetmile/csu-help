@@ -54,22 +54,12 @@ Page({
         ]
     },
     onReady: function () {
-      wx.showLoading({
-        title: '加载中',
-      });
-      setTimeout(function () {
-        wx.hideLoading()
-      }, 1000);
-      util.sleep(1000);
-      this.setData({
-        has_login: app.globalData.hasLogin,
-        es_bind: wx.getStorageSync("course_shedule")
-      });
     },
     onShow: function () {
+      
       // 页面显示
       let that = this;
-      if (wx.getStorageSync("course_shedule_date") && wx.getStorageSync("course_shedule_date") <= new Date().getDate()) {
+      if (wx.getStorageSync("course_shedule_date") && wx.getStorageSync("course_shedule_date") < new Date().getDate()) {
         wx.removeStorageSync("course_shedule");
       }
       if (app.globalData.hasLogin && !wx.getStorageSync("course_shedule")) {
@@ -79,6 +69,7 @@ Page({
             wx.setStorageSync("course_shedule_date", new Date().getDate())
           } else {
             that.setData({
+              es_bind: false,
               err_message: res.message,
             })
           }
@@ -87,6 +78,7 @@ Page({
       var day = new Date().getDay();
       var dayCourse = util.getCourse(day);
       that.setData({
+        es_bind: true,
         courses: dayCourse,
         has_course: dayCourse.length > 0
       })
