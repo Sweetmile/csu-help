@@ -14,6 +14,52 @@ function formatTime(date) {
     return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+function outExpireTime(time) {
+  var date = new Date();
+  var expireDate = new Date( time[0] + "-" + time[1] + "-" + time[2] + " " + time[3] + ":" + time[4] + ":" + time[5] );
+  return date.valueOf() - expireDate.valueOf() > 0;
+}
+
+function getCourse(day) {
+  if (!wx.getStorageSync("course_shedule")) {
+    return []
+  }
+  var shedule = wx.getStorageSync("course_shedule");
+  switch(day) {
+    case 0:
+      return shedule.sunday;
+      break;
+    case 1:
+      return shedule.monday;
+      break;
+    case 2:
+      return shedule.tuesday;
+      break;
+    case 3:
+      return shedule.wednesday;
+      break;
+    case 4:
+      return shedule.thursday;
+      break;
+    case 5:
+      return shedule.friday;
+      break;
+    case 6:
+      return shedule.saturday;
+      break;
+  }
+}
+
+function sleep(numberMillis) {
+  var now = new Date();
+  var exitTime = now.getTime() + numberMillis;
+  while (true) {
+    now = new Date();
+    if (now.getTime() > exitTime)
+      return;
+  }
+}
+
 function formatNumber(n) {
     n = n.toString()
     return n[1] ? n : '0' + n
@@ -93,7 +139,10 @@ module.exports = {
     request,
     redirect,
     showErrorToast,
-    showModal
+    showModal,
+    outExpireTime,
+    getCourse,
+    sleep
 }
 
 

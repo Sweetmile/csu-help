@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/news/news",
     "pages/user/user",
-    "pages/esbind/esbind"
+    "pages/esbind/esbind",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "dark",

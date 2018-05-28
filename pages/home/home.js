@@ -7,10 +7,13 @@ var app = getApp();
 Page({
     data: {
         has_login: false,
+        es_bind: false,
         err_message: "error",
         line: [1, 2],
         line_item: [1, 2, 3],
         line_size: 3,
+        has_course: false,
+        courses: [],
         list: [
             {
                 id: "schedule",
@@ -50,19 +53,44 @@ Page({
             },
         ]
     },
-    onShow: function () {
-      // 页面显示
-      if (app.globalData.hasLogin) {
-        
-      } else {
-        this.setData({
-          err_message: "未绑定教务系统~"
-        })
-      }
-
+    onReady: function () {
+      wx.showLoading({
+        title: '加载中',
+      });
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1000);
+      util.sleep(1000);
       this.setData({
         has_login: app.globalData.hasLogin,
       });
+    },
+    onShow: function () {
+      // 页面显示
+      let that = this;
+      if (wx.getStorageSync("course_shedule_date") && wx.getStorageSync("course_shedule_date") <= new Date().getDate()) {
+        wx.removeStorageSync("course_shedule");
+      }
+      if (app.globalData.hasLogin && !wx.getStorageSync("course_shedule")) {
+        util.request(api.miniEsSchedule, { }, 'GET').then(function (res) {
+          if (res.code === "200") {
+            wx.setStorageSync("course_shedule", res.data);
+            wx.setStorageSync("course_shedule_date", new Date().getDate())
+          }
+        })
+      }
+      var day = new Date().getDay();
+      var dayCourse = util.getCourse(day);
+      that.setData({
+        courses: dayCourse,
+        has_course: dayCourse.length > 0
+      })
+      if (!app.globalData.hasLogin) {
+        that.setData({
+          err_message: "请前往设置授权登陆哦~",
+          es_bind: wx.getStorageSync("course_shedule")
+        })
+      }
 
     }
 });

@@ -4,6 +4,7 @@ let user = require('./utils/user.js');
 
 App({
     onLaunch: function () {
+      
     },
     onShow: function (options) {
         user.checkLogin().then(res => {

@@ -4,6 +4,7 @@
 const util = require('../utils/util.js');
 const api = require('../config/api.js');
 
+var app = getApp();
 
 /**
  * Promise封装wx.checkSession
@@ -72,9 +73,20 @@ function loginByWeixin(userInfo) {
  * 判断用户是否登录
  */
 function checkLogin() {
+  var that = this;
   return new Promise(function (resolve, reject) {
     if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
       checkSession().then(() => {
+        var date = new Date();
+        var time = wx.getStorageSync('token').expireTime;
+        if (util.outExpireTime(time)) {
+          that.loginByWeixin(wx.getStorageSync('userInfo')).then(res => {
+            resolve(true);
+          }).catch((err) => {
+            util.showErrorToast('微信登录失败');
+            reject(false);
+          });
+        }
         resolve(true);
       }).catch(() => {
         reject(false);

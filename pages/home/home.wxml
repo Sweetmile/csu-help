@@ -26,16 +26,24 @@
           今日课表
         </view>
      </view>
-     <view class="weui-flex">
+
+     <view wx:if="{{!has_course}}" class="weui-flex">
         <view class="weui-flex__item">
               <image class="weui-grid__icon" src="/static/icon/index/outdoor.png" />
               <view class="weui-grid__icon" style='font-size:12px;color:#6F6F6F;width:35%'>今日无课，出去走走吧~</view>
         </view>
      </view>
-     <course name="1"></course>
+
+     <block wx:if="{{has_course}}">
+     <block wx:for="{{courses}}" wx:key="*this">
+        <course name="{{item.courseName}}" professor="{{item.teacherName}}" classroom="{{item.classRoom}}" time="{{item.beginTime}}-{{item.endTime}}" ></course>
+     </block>
+     </block>
+     
   </view>
 
   </view>
-
+  <block wx:if="{{!has_login}}">
   <error message="{{err_message}}"></error>
+  </block>
 </view>

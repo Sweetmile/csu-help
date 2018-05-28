@@ -80,13 +80,14 @@ Page({
     }
     let that = this;
     user.checkLogin().catch(() => {
-      user.loginByWeixin(e.detail.userInfo).then(res => {
-        app.globalData.hasLogin = true;
-      }).catch((err) => {
-        app.globalData.hasLogin = false;
-        util.showErrorToast('微信登录失败');
-      });
-
+      if (!wx.getStorageSync('userInfo') || !wx.getStorageSync('token')) {
+        user.loginByWeixin(e.detail.userInfo).then(res => {
+          app.globalData.hasLogin = true;
+        }).catch((err) => {
+          app.globalData.hasLogin = false;
+          util.showErrorToast('微信登录失败');
+        });
+      }
     });
     if (app.globalData.hasLogin) {
       util.request(api.miniEsBind, { xh: that.data.xh, pwd: that.data.pwd }, 'POST').then(function (res) {

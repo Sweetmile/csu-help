@@ -5,5 +5,6 @@ module.exports = {
   miniAuthLogin: web_root + 'mini/auth/login',
 
   miniEsBind: web_root + 'mini/es/bind',
-  miniEsInfo: web_root + 'mini/es/info'
+  miniEsInfo: web_root + 'mini/es/info',
+  miniEsSchedule: web_root + 'mini/es/schedule'
 }

@@ -1,12 +1,12 @@
 <view class="weui-form-preview">
   <view class="weui-form-preview__bd">
     <view class="weui-form-preview__item">
-      <view class="weui-form-preview__label">课程：{{name}}</view>
-      <view class="weui-form-preview__value">教师：{{professor}}</view>
+      <view class="weui-form-preview__label name"><text>课程：{{name}}</text></view>
+      <view class="weui-form-preview__value professor">教师：{{professor}}</view>
     </view>
     <view class="weui-form-preview__item">
-      <view class="weui-form-preview__label">教室：{{classroom}}</view>
-      <view class="weui-form-preview__value">时间：{{time}}</view>
+      <view class="weui-form-preview__label name">教室：{{classroom}}</view>
+      <view class="weui-form-preview__value professor">时间：{{time}}</view>
     </view>
   </view>
 </view>
