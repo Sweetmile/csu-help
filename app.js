@@ -11,9 +11,9 @@ App({
         }).catch(() => {
             this.globalData.hasLogin = false;
         });
-        wx.reLaunch({
-          url: "/pages/home/home"
-        });
+        //wx.reLaunch({
+        //  url: "/pages/home/home"
+        //});
     },
     globalData: {
         hasLogin: false

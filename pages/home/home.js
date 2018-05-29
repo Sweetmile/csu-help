@@ -18,7 +18,7 @@ Page({
             {
                 id: "schedule",
                 icon: "/static/icon/index/schedule.png",
-                page: "/page/schedule/schedule",
+                page: "/pages/schedule/schedule",
                 name: "课程表"
             },
             {
@@ -59,7 +59,7 @@ Page({
       
       // 页面显示
       let that = this;
-      if (wx.getStorageSync("course_shedule_date") && wx.getStorageSync("course_shedule_date") < new Date().getDate()) {
+      if (wx.getStorageSync("course_shedule") && wx.getStorageSync("course_shedule_date") < new Date().getDate()) {
         wx.removeStorageSync("course_shedule");
       }
       if (app.globalData.hasLogin && !wx.getStorageSync("course_shedule")) {
@@ -78,9 +78,10 @@ Page({
       var day = new Date().getDay();
       var dayCourse = util.getCourse(day);
       that.setData({
-        es_bind: true,
+        es_bind: wx.getStorageSync("course_shedule"),
         courses: dayCourse,
-        has_course: dayCourse.length > 0
+        has_course: dayCourse.length > 0,
+        has_login: app.globalData.hasLogin,
       })
     }
 });

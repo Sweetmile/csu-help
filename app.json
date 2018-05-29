@@ -4,7 +4,8 @@
     "pages/news/news",
     "pages/user/user",
     "pages/esbind/esbind",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/schedule/schedule"
   ],
   "window": {
     "backgroundTextStyle": "dark",

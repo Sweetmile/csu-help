@@ -1,0 +1,30 @@
+<view class="page__hd head">
+  <picker bindchange="selectWeek" value="{{week - 1}}" range="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]}}">
+    <view class="picker">
+      第{{week}}周 v
+    </view>
+  </picker>
+</view>
+<view class="top">
+  <view wx:for="{{['一','二','三','四','五','六','日']}}" wx:key="{{index}}" class="top-text">周{{item}}</view>
+</view>
+<scroll-view scroll-y="true" class="scroll">
+  <view style="height:1300rpx;width:730rpx;display:flex;">
+    <view style="color:#7cba23;">
+      <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}" class="left">
+        {{item}}
+      </view>
+    </view>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}">
+      <view style="width:750rpx;margin-top:{{(index+1)*120}}rpx;  position: absolute;border-bottom:1rpx solid lightgray;">
+      </view>
+    </view>
+
+    <!--课表-->
+    <view wx:for="{{courses}}" wx:key="{{index}}">
+      <view class="flex-item kcb-item" bindtap="showCardView" data-statu="open" data-index="{{index}}" style="margin-left:{{(item.week - 1)*120}}rpx;margin-top:{{(item.begin-1)*120+5}}rpx;height:{{(item.end-item.begin + 1)*120-5}}rpx;background-color:{{colorArrays[index%9]}}">
+        <view class="smalltext" >{{item.name}}@{{item.classroom}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
