@@ -1,7 +1,10 @@
 <view class="page__hd head">
   <picker bindchange="selectWeek" value="{{week - 1}}" range="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]}}">
     <view class="picker">
-      第{{week}}周 v
+      第{{week}}周 
+      <icon size="10">
+              <image class="weui-grid__icon" src="/static/icon/down.png" />
+          </icon>
     </view>
   </picker>
 </view>

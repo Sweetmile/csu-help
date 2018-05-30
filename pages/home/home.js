@@ -24,7 +24,7 @@ Page({
             {
                 id: "grade",
                 icon: "/static/icon/index/grade.png",
-                page: "/page/grade/grade",
+                page: "/pages/grade/grade",
                 name: "成绩"
             },
             {

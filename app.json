@@ -5,7 +5,9 @@
     "pages/user/user",
     "pages/esbind/esbind",
     "pages/setting/setting",
-    "pages/schedule/schedule"
+    "pages/schedule/schedule",
+    "pages/grade/grade",
+    "pages/cet/cet"
   ],
   "window": {
     "backgroundTextStyle": "dark",

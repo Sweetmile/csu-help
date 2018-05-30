@@ -1,0 +1,42 @@
+<view class="page">
+    <view class="page__hd">
+       <picker bindchange="selectSemester" value='{{index}}' range="{{semesters}}">
+    <view class="picker">
+      {{semesters[select_index]}}
+      <icon size="10">
+          <image class="weui-grid__icon" src="/static/icon/down.png" />
+      </icon>
+    </view>
+  </picker>
+    </view>
+    <view class="page__bd">
+    <block wx:for="{{grades}}" wx:key="{{index}}">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label" >成绩</view>
+                    <view class="weui-form-preview__value_in-hd" style="color: '#1aad19'">{{item.score}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程名</view>
+                    <view class="weui-form-preview__value">{{item.courseName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label" >学分</view>
+                    <view class="weui-form-preview__value">{{item.credit}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程类别</view>
+                    <view class="weui-form-preview__value">{{item.courseType}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">考试类别</view>
+                    <view class="weui-form-preview__value">{{item.scoreType}}</view>
+                </view>
+            </view>
+        </view>
+        </block>
+    </view>
+</view>
