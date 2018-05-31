@@ -82,6 +82,12 @@
 					"name": "room_result",
 					"pathName": "pages/room/result/result",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bus",
+					"pathName": "pages/bus/bus",
+					"query": ""
 				}
 			]
 		}

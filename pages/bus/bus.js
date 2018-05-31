@@ -1,11 +1,15 @@
 // pages/bus/bus.js
+var bus = require('../../config/bus.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    station: bus.station,
+    lines: [],
+    start_index: -1
   },
 
   /**
@@ -61,6 +65,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
-  }
+    
+  },
+  bindStart: function (e) {
+    this.setData({
+      start_index: e.detail.value,
+      lines: bus.line[e.detail.value]
+    })
+  },
 })

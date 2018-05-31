@@ -9,9 +9,9 @@
     "pages/grade/grade",
     "pages/cet/cet",
     "pages/library/library",
-    "pages/bus/bus",
     "pages/room/search/search",
-    "pages/room/result/result"
+    "pages/room/result/result",
+    "pages/bus/bus"
   ],
   "window": {
     "backgroundTextStyle": "dark",
