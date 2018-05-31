@@ -1,0 +1,49 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">空闲教室查询</view>
+    </view>
+    <view class="page__bd">
+    
+        <view class="weui-cells__title">选择</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">校区</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCampusChange" value="{{campus_index}}" range="{{show_campus}}">
+                        <view class="weui-select weui-select_in-select-after">{{show_campus[campus_index]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">教学楼</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindBuildChange" value="{{build_index}}" range="{{show_building}}">
+                        <view class="weui-select weui-select_in-select-after">{{show_building[build_index]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">节次</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindTimeChange" value="{{time_index}}" range="{{show_time}}">
+                        <view class="weui-select weui-select_in-select-after">{{show_time[time_index]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="search">确定</button>
+        </view>
+    </view>
+</view>

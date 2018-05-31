@@ -9,6 +9,7 @@ module.exports = {
   miniEsSchedule: web_root + 'mini/es/schedule',
   miniEsUnbind: web_root + 'mini/es/unbind',
   miniEsGrades: web_root + 'mini/es/grades',
+  miniEsRoom: web_root + 'mini/es/room',
 
   miniCetGrades: web_root + 'mini/cet/grades',
 }

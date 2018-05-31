@@ -7,7 +7,11 @@
     "pages/setting/setting",
     "pages/schedule/schedule",
     "pages/grade/grade",
-    "pages/cet/cet"
+    "pages/cet/cet",
+    "pages/library/library",
+    "pages/bus/bus",
+    "pages/room/search/search",
+    "pages/room/result/result"
   ],
   "window": {
     "backgroundTextStyle": "dark",

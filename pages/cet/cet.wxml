@@ -23,7 +23,7 @@
             </view>
           </view></view>
         <view class="weui-btn-area">
-            <button class="weui-btn"  type="primary" bindgetuserinfo="cetSearch">查询</button>
+            <button class="weui-btn"  type="primary" bindtap="cetSearch">查询</button>
         </view>
     </view>
 </view>

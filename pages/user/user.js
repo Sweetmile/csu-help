@@ -7,7 +7,7 @@ Page({
   data: {
     userInfo: {
       nickName: 'null',
-      avatarUrl: 'http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png'
+      avatarUrl: '/static/icon/C.png'
     }
   },
   onLoad: function (options) {
@@ -49,5 +49,8 @@ Page({
       }
     })
 
+  },
+  libBind: function() {
+    util.showModal("on my way");
   }
 })

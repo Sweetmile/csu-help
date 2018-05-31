@@ -17,13 +17,13 @@
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                         </navigator>
-                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                         <navigator url="#" class="weui-cell weui-cell_access" hover-class="weui-cell_active"> 
                             <view class="weui-cell__hd"></view>
                             <view class="weui-cell__bd weui-cell_primary">
-                                <view>文字标题</view>
+                                <view bindtap='libBind'>绑定图书馆</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                        </navigator>
+                         </navigator> 
                     </view>
                 </view>
             </view>

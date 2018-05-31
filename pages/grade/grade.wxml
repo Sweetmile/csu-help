@@ -15,7 +15,7 @@
             <view class="weui-form-preview__hd">
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label" >成绩</view>
-                    <view class="weui-form-preview__value_in-hd" style="color: '#1aad19'">{{item.score}}</view>
+                    <view class="weui-form-preview__value_in-hd" style="color:{{'#1aad19'}}">{{item.score}}</view>
                 </view>
             </view>
             <view class="weui-form-preview__bd">

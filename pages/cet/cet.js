@@ -10,6 +10,7 @@ Page({
     showGrade: false,
     grades: [],
     xh: "",
+    
     name: ""
   },
 
@@ -101,7 +102,8 @@ Page({
     util.request(api.miniCetGrades, {'xh': _xh, 'name' : _name}, 'POST').then(function (res) {
       if (res.code === "200" && res.data != null) {
         that.setData({
-          grades: res.data
+          grades: res.data,
+          showGrade: true
         })
         if (res.data.length < 1) {
           util.showModal("未能获取成绩");

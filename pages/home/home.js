@@ -30,25 +30,25 @@ Page({
             {
                 id: "cet",
                 icon: "/static/icon/index/cet.png",
-                page: "/page/cet/cet",
+                page: "/pages/cet/cet",
                 name: "CET"
             },
             {
-                id: "exam",
-                icon: "/static/icon/index/exam.png",
-                page: "/page/exam/exam",
-                name: "考试安排"
+                id: "library",
+                icon: "/static/icon/index/library.png",
+                page: "/pages/library/library",
+                name: "图书馆"
             },
             {
                 id: "classroom",
                 icon: "/static/icon/index/classroom.png",
-                page: "/page/classroom/classroom",
+                page: "/pages/room/search/search",
                 name: "自习室"
             },
             {
                 id: "bus",
                 icon: "/static/icon/index/bus.png",
-                page: "/page/bus/bus",
+                page: "/pages/bus/bus",
                 name: "校车"
             },
         ]
@@ -83,5 +83,8 @@ Page({
         has_course: dayCourse.length > 0,
         has_login: app.globalData.hasLogin,
       })
+    },
+    library: function () {
+      util.showModal("on my way");
     }
 });
