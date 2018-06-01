@@ -69,6 +69,9 @@ function formatNumber(n) {
  * 封封微信的的request
  */
 function request(url, data = {}, method = "GET") {
+  wx.showLoading({
+    title: '加载中',
+  })
     return new Promise(function (resolve, reject) {
         wx.request({
             url: url,
@@ -97,6 +100,9 @@ function request(url, data = {}, method = "GET") {
                 } else {
                     reject(res.errMsg);
                 }
+                setTimeout(function () {
+                  wx.hideLoading()
+                })
 
             },
             fail: function (err) {

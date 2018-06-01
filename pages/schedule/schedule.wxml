@@ -25,7 +25,7 @@
 
     <!--课表-->
     <view wx:for="{{courses}}" wx:key="{{index}}">
-      <view class="flex-item kcb-item" bindtap="showCardView" data-statu="open" data-index="{{index}}" style="margin-left:{{(item.week - 1)*120}}rpx;margin-top:{{(item.begin-1)*120+5}}rpx;height:{{(item.end-item.begin + 1)*120-5}}rpx;background-color:{{colorArrays[index%9]}}">
+      <view class="flex-item kcb-item" bindtap="showCardView" data-statu="open" data-index="{{index}}" style="margin-left:{{(item.week - 1)*100}}rpx;margin-top:{{(item.begin-1)*120+5}}rpx;height:{{(item.end-item.begin + 1)*120-5}}rpx;background-color:{{colorArrays[index%9]}}">
         <view class="smalltext" >{{item.name}}@{{item.classroom}}</view>
       </view>
     </view>

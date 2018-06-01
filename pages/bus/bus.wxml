@@ -1,7 +1,6 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="page__hd">
-        <view class="page__title">校车查询</view>
-    </view>
+        <view class="page__title">校车查询</view></view>
     <view class="page__bd">
     
         <view class="weui-cells__title">选择出发点</view>
@@ -16,10 +15,6 @@
                     </picker>
                 </view>
             </view>
-        </view>
-
-        <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="search">确定</button>
         </view>
          <block wx:for="{{lines}}" wx:key="{{index}}">
         <view class="weui-form-preview">
